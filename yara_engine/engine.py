@@ -38,5 +38,4 @@ class YaraEngine:
             'owner': 'unknown'
         }
 
-        matches = self.rules.match(file_path, externals=current_vars)
-        return [match.rule for match in matches]
+        return self.rules.match(file_path, externals=current_vars)

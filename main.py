@@ -1,7 +1,7 @@
 import sys
 import json
 import os
-from pipeline import ScanPipeline
+from pipeline import StaticPipeline
 
 
 def main():
@@ -11,7 +11,7 @@ def main():
 
     files = sys.argv[1:]
 
-    pipeline = ScanPipeline()
+    pipeline = StaticPipeline(files[0])
 
     results = []
 
@@ -23,7 +23,7 @@ def main():
             })
             continue
 
-        result = pipeline.process_file(file_path)
+        result = pipeline.process_file()
         results.append(result)
 
     print(json.dumps(results, indent=4))
