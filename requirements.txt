@@ -1,0 +1,5 @@
+yara-python
+pefile
+die-python
+unipacker
+requests
