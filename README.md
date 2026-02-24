@@ -3,6 +3,23 @@
 <img src="design-v1.0.jpg" alt="design" width="800"/>
 
 <hr>
+<h2>YARA Rules</h2>
+<p> Reference: <a href="https://github.com/Neo23x0/signature-base">Neo23x0/Signature_Based</a>
+<br/> This repo is the most updated yara rules repo I found
+<br/> It currently contains 737 Rules
+</p>
+
+<h2>How to Use?</h2>
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/MalWhere-CU/Static-Analysis-Engine
+   cd Static-Analysis-Engine
+2. **Run Setup Script**
+    ```bash
+    sudo chmod +x setup.sh
+    ./setup.sh
+---
 
 <h2>Limitations & Future Work</h2>
 
