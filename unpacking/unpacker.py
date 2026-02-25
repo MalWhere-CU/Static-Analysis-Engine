@@ -2,7 +2,10 @@ import subprocess
 import os
 import tempfile
 import shutil
-from config import UPX_PATH
+from dotenv import load_dotenv
+
+load_dotenv()
+UPX_PATH = os.getenv("UPX_PATH")
 
 class UnpackFile:
     @staticmethod

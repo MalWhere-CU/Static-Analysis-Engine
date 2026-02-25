@@ -1,6 +1,9 @@
 import os
+from dotenv import load_dotenv
 from yara_engine.db import insert_rule
-from config import DB_PATH  
+
+load_dotenv()
+DB_PATH = os.getenv("DB_PATH")
 
 def import_rules_from_directory(directory_path: str):
     """

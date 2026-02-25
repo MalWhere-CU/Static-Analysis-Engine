@@ -1,6 +1,10 @@
+import os
 import sqlite3
 from typing import List
-from config import DB_PATH
+from dotenv import load_dotenv
+
+load_dotenv()
+DB_PATH = os.getenv("DB_PATH")
 
 def get_enabled_rules(db_path: str) -> List[str]:
     """Fetches all rules where enabled is set to 1."""
@@ -40,3 +44,28 @@ def toggle_rule(db_path: str, rule_name: str, enable: bool = True):
         cursor.execute("UPDATE rules SET enabled = ? WHERE name = ?", (status, rule_name))
         conn.commit()
 
+def get_rule_text_by_name(db_path, rule_name):
+    with sqlite3.connect(db_path) as conn:
+        cursor = conn.cursor()
+        cursor.execute("SELECT rule_text FROM rules WHERE name = ?", (rule_name,))
+        result = cursor.fetchone()
+        print(result[0] if result else "No rule found with that name")
+        return result[0] if result else None
+    
+
+# def get_rule_text_by_name(db_path, rule_name):
+#     """Fetches rule text using a case-insensitive name match."""
+#     with sqlite3.connect(db_path) as conn:
+#         cursor = conn.cursor()
+#         # Use COLLATE NOCASE for robustness
+#         cursor.execute("SELECT rule_text FROM rules WHERE name = ? COLLATE NOCASE", (rule_name,))
+#         result = cursor.fetchone()
+        
+#         if result:
+#             return result[0]
+        
+#         # Fallback: Try searching for the name inside the rule_text itself 
+#         # (Useful if the DB 'name' was set to something else)
+#         cursor.execute("SELECT rule_text FROM rules WHERE rule_text LIKE ?", (f"%rule {rule_name}%",))
+#         result = cursor.fetchone()
+#         return result[0] if result else None

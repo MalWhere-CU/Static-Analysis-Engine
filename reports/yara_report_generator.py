@@ -1,11 +1,19 @@
 import json
 import os
 from datetime import datetime
+from dotenv import load_dotenv
+from malware_explainer.yara_rule_explainer import YaraRuleExplainer
 from utils.hashes import HashCalculator
+from yara_engine.db import get_rule_text_by_name
+
+load_dotenv()
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+DB_PATH = os.getenv("DB_PATH")
 
 class YaraReportGenerator:
-    def __init__(self, file_path: str):
+    def __init__(self, file_path: str, yara_ai_explainer: bool = False):
         self.file_path = file_path
+        self.yara_ai_explainer = yara_ai_explainer
         self.report_data = {
             "scan_info": {
                 "timestamp": datetime.now().isoformat(),
@@ -18,11 +26,13 @@ class YaraReportGenerator:
             "detections": [],
             "summary": {
                 "total_matches": 0
-            }
+            },
+            "yara_ai_explainer": "",
         }
 
     def add_yara_matches(self, matches:  list):
         """Processes YARA Match objects and extracts metadata for the report"""
+        matched_rule_texts = []
         for match in matches: 
             meta = match.meta
             detection = {
@@ -38,6 +48,14 @@ class YaraReportGenerator:
             }
             self.report_data["detections"].append(detection)
             self.report_data["summary"]["total_matches"] += 1
+            meta_string = json.dumps(match.meta, indent=2)
+            matched_rule_texts.append(meta_string)
+
+        if self.yara_ai_explainer:
+            explainer = YaraRuleExplainer(api_key=OPENAI_API_KEY, yara_rules=matched_rule_texts)
+            self.report_data["yara_ai_explainer"] = explainer.explain_rule()
+        else:
+            self.report_data["yara_ai_explainer"] = "YARA AI explaination not enabled for this report"
 
     
     def generate_json(self, output_path: str = "report.json"):

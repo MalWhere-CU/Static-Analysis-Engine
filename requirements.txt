@@ -3,3 +3,5 @@ pefile
 die-python
 unipacker
 requests
+openai
+python-dotenv

@@ -4,14 +4,18 @@ from detection.packer_detection import detect_packer
 from reports.yara_report_generator import YaraReportGenerator
 from unpacking.unpacker import UnpackFile
 from yara_engine.engine import YaraEngine
-from config import DB_PATH
+from dotenv import load_dotenv
+
+load_dotenv()
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+DB_PATH = os.getenv("DB_PATH")
 
 
 class StaticPipeline:
-    def __init__(self, file_path: str):
+    def __init__(self, file_path: str, yara_ai_explainer: bool =False):
         self.file_path = file_path
         self.yara_engine = YaraEngine(DB_PATH)
-        self.yara_reporter = YaraReportGenerator(self.file_path)
+        self.yara_reporter = YaraReportGenerator(self.file_path, yara_ai_explainer)
 
     def process_file(self) -> dict:
         start_time = time.time()
@@ -57,4 +61,5 @@ class StaticPipeline:
         result["scan_time"] = round(time.time() - start_time, 3)
         UnpackFile.cleanup(unpacked_path) if result["unpacked"] else None
 
+        print(result)
         return result["report_data"]
