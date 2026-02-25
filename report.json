@@ -1,6 +1,6 @@
 {
     "scan_info": {
-        "timestamp": "2026-02-25T21:12:42.838783",
+        "timestamp": "2026-02-25T22:08:15.062070",
         "file_name": "test.exe",
         "hashes": {
             "md5": "44d88612fea8a8f36de82e1278abb02f",
@@ -23,5 +23,5 @@
     "summary": {
         "total_matches": 1
     },
-    "yara_ai_explainer": "Error generating AI explanation: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+    "yara_ai_explainer": "YARA AI explaination not enabled for this report"
 }

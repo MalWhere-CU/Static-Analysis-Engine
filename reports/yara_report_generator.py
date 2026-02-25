@@ -2,6 +2,7 @@ import json
 import os
 from datetime import datetime
 from dotenv import load_dotenv
+from caching.redis_explainer_caching import YaraExplainerRedisCache
 from malware_explainer.yara_rule_explainer import YaraRuleExplainer
 from utils.hashes import HashCalculator
 from yara_engine.db import get_rule_text_by_name

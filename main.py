@@ -11,7 +11,7 @@ def main():
 
     files = sys.argv[1:]
 
-    pipeline = StaticPipeline(files[0], yara_ai_explainer=True)  # Initialize pipeline with the first file for AI explaination
+    pipeline = StaticPipeline(files[0]) 
 
     results = []
 

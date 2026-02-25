@@ -5,3 +5,4 @@ unipacker
 requests
 openai
 python-dotenv
+redis
