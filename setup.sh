@@ -53,23 +53,6 @@ EOF
     echo "[!] IMPORTANT: Update your .env file with your OpenAI API Key!"
 fi
 
-# 6️⃣ Create/Update SQLite Database
-DB_FILE="rules.db"
-echo "[+] Initializing/Updating Database..."
-
-sqlite3 $DB_FILE <<EOF
-CREATE TABLE IF NOT EXISTS rules (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT UNIQUE,             
-    rule_text TEXT NOT NULL,
-    ai_explanation TEXT,      -- Added for DB-based persistence
-    enabled INTEGER DEFAULT 1
-);
-EOF
-
-# 7️⃣ Create necessary directories
-mkdir -p test_samples
-mkdir -p logs
 
 echo "========================================"
 echo " ✅ Setup completed successfully"
