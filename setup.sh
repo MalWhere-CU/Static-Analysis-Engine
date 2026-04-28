@@ -60,3 +60,5 @@ echo "========================================"
 echo "1. Activate environment: source venv/bin/activate"
 echo "2. Edit your .env file"
 echo "3. Run your scanner: python3 main.py <sample_path>"
+
+echo "===============test========================="
