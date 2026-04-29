@@ -1,0 +1,3 @@
+[submodule "MalConv2"]
+	path = MalConv2
+	url = https://github.com/FutureComputing4AI/MalConv2.git

@@ -6,3 +6,6 @@ requests
 openai
 python-dotenv
 redis
+torch>=1.7.0
+torchvision
+numpy
