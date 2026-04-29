@@ -12,7 +12,7 @@ class UnpackFile:
     def unpack(file_path: str) -> str | None:
         """Uses UPX to unpack a sample"""
         temp_dir = tempfile.mkdtemp()
-        input_path = os.path.join(temp_dir, file_path)
+        input_path = os.path.join(temp_dir, "input.exe")
         unpacked_path = os.path.join(temp_dir, "putty_unpacked.exe")
 
         with open(file_path, "rb") as src, open(input_path, "wb") as dst:

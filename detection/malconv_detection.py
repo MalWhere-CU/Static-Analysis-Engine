@@ -7,7 +7,7 @@ import torch.nn.functional as F
 # Add MalConv2 to path
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'MalConv2'))
 
-from MalConvGCT_nocat import MalConvGCT
+from MalConv2.MalConvGCT_nocat import MalConvGCT
 
 class MalConvDetector:
     def __init__(self, checkpoint_path=None):
