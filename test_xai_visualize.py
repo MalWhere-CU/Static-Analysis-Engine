@@ -9,9 +9,9 @@ from utils.xai_visualize import visualize_attributions
 
 
 def run_visualization(
-    sample_path: str = "test_samples/mal_2.exe",
+    sample_path: str = "test_samples/Windows_10.exe",
     method: str = "deeplift",
-    output_path: str = "xai_results/mal_2.png",
+    output_path: str = "xai_results/Windows_10.png",
     window_size: int = 256,
     top_k: int = 10,
     heatmap_bins: int = 512,
