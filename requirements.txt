@@ -9,3 +9,9 @@ redis
 torch>=1.7.0
 torchvision
 numpy
+captum
+scikit-learn
+matplotlib
+langchain-google-genai
+langchain-core
+pydantic

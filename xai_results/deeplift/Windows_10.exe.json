@@ -1,0 +1,347 @@
+{
+  "file": "/wv/mohelkg1/Project/Malwhere/Static-Analysis-Engine/test_samples/Windows_10.exe",
+  "file_size": 17144,
+  "method": "deeplift",
+  "pe_mapping": {
+    "file_info": {
+      "file": "/wv/mohelkg1/Project/Malwhere/Static-Analysis-Engine/test_samples/Windows_10.exe",
+      "file_size": 17144,
+      "is_pe": true,
+      "sections": [
+        {
+          "name": ".text",
+          "raw_offset": 512,
+          "raw_size": 6144,
+          "virtual_address": 8192,
+          "virtual_size": 5904,
+          "entropy": 5.4787
+        },
+        {
+          "name": ".rsrc",
+          "raw_offset": 6656,
+          "raw_size": 2048,
+          "virtual_address": 16384,
+          "virtual_size": 1560,
+          "entropy": 3.4749
+        },
+        {
+          "name": ".reloc",
+          "raw_offset": 8704,
+          "raw_size": 512,
+          "virtual_address": 24576,
+          "virtual_size": 12,
+          "entropy": 0.0815
+        }
+      ],
+      "num_imports": 1,
+      "num_strings": 311,
+      "entry_point": 14050,
+      "image_base": 4194304
+    },
+    "region_mappings": [
+      {
+        "start_offset": 9024,
+        "end_offset": 9280,
+        "section": {
+          "name": ".reloc",
+          "raw_offset": 8704,
+          "raw_size": 512,
+          "entropy": 0.0815
+        },
+        "strings": [],
+        "imports": [],
+        "raw_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "start_offset": 13696,
+        "end_offset": 13952,
+        "section": {
+          "name": "OVERLAY",
+          "raw_offset": 9216,
+          "raw_size": 7928,
+          "entropy": 0.0
+        },
+        "strings": [
+          {
+            "value": "20210129201705Z",
+            "offset": 13914,
+            "encoding": "ascii"
+          }
+        ],
+        "imports": [],
+        "raw_hex": "26bf97915e88dfbf1bb8a8cabcdfff2a1d83a4bcb178259130eab2fe9ae9164135a80cf654b91c14ab7b0599a1820d4530820d41060a2b060104018237030301"
+      },
+      {
+        "start_offset": 16320,
+        "end_offset": 16576,
+        "section": {
+          "name": "OVERLAY",
+          "raw_offset": 9216,
+          "raw_size": 7928,
+          "entropy": 0.0
+        },
+        "strings": [
+          {
+            "value": "8aMbF$",
+            "offset": 16406,
+            "encoding": "ascii"
+          },
+          {
+            "value": "|BB(",
+            "offset": 16515,
+            "encoding": "ascii"
+          },
+          {
+            "value": "V3\"/\"6",
+            "offset": 16532,
+            "encoding": "ascii"
+          }
+        ],
+        "imports": [],
+        "raw_hex": "cf0302fdc5a7c30e20422caf77f32b1f0c215a2ab705341d6aae99f827a266bf09aa60df76a43a930ff8b2d1d87c1962e85e82251ec4ba1c7b2c21e2d65b2c14"
+      },
+      {
+        "start_offset": 9664,
+        "end_offset": 9920,
+        "section": {
+          "name": "OVERLAY",
+          "raw_offset": 9216,
+          "raw_size": 7928,
+          "entropy": 0.0
+        },
+        "strings": [
+          {
+            "value": "8&`u",
+            "offset": 9834,
+            "encoding": "ascii"
+          }
+        ],
+        "imports": [],
+        "raw_hex": "72fc460243c7b28a9d045f24cb2e4be1608246e152ab0c8147706cdd64d1ebf52ca30f823d0c2bae97d7b614861079bb3b1380778c08e149d26a622f1f5efa96"
+      },
+      {
+        "start_offset": 192,
+        "end_offset": 448,
+        "section": {
+          "name": "PE_HEADERS",
+          "raw_offset": 0,
+          "raw_size": 512,
+          "entropy": 0.0
+        },
+        "strings": [
+          {
+            "value": ".text",
+            "offset": 376,
+            "encoding": "ascii"
+          },
+          {
+            "value": "`.rsrc",
+            "offset": 415,
+            "encoding": "ascii"
+          }
+        ],
+        "imports": [],
+        "raw_hex": "040000000000000006000000000000000080000000020000d4490000030060850000100000100000000010000010000000000000100000000000000000000000"
+      },
+      {
+        "start_offset": 14400,
+        "end_offset": 14656,
+        "section": {
+          "name": "OVERLAY",
+          "raw_offset": 9216,
+          "raw_size": 7928,
+          "entropy": 0.0
+        },
+        "strings": [
+          {
+            "value": "1)J\\",
+            "offset": 14404,
+            "encoding": "ascii"
+          },
+          {
+            "value": "_lCI",
+            "offset": 14422,
+            "encoding": "ascii"
+          },
+          {
+            "value": ":0806",
+            "offset": 14565,
+            "encoding": "ascii"
+          },
+          {
+            "value": "0)0'",
+            "offset": 14581,
+            "encoding": "ascii"
+          },
+          {
+            "value": "http://www.digicert.com/CPS0",
+            "offset": 14597,
+            "encoding": "ascii"
+          }
+        ],
+        "imports": [],
+        "raw_hex": "46e3038331294a5c0c318a4a8c88c5f7305af914af155f6c434909fd262353f68d63e81aab5bb11d30c29b6982b4dbfc5654bc1fa187abbe7a5b0a202f4b09c9"
+      }
+    ]
+  },
+  "file_path": "/wv/mohelkg1/Project/Malwhere/Static-Analysis-Engine/test_samples/Windows_10.exe",
+  "predicted_class": "benign",
+  "confidence": 0.9999978542327881,
+  "num_bytes": 17144,
+  "num_windows": 67,
+  "window_size": 256,
+  "top_regions": [
+    {
+      "start_offset": 9024,
+      "end_offset": 9280,
+      "score": 1.0,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 13696,
+      "end_offset": 13952,
+      "score": 0.282347,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 16320,
+      "end_offset": 16576,
+      "score": 0.187927,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 9664,
+      "end_offset": 9920,
+      "score": 0.177966,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 192,
+      "end_offset": 448,
+      "score": 0.160959,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 14400,
+      "end_offset": 14656,
+      "score": 0.106647,
+      "direction": "benign"
+    }
+  ],
+  "top_regions_bidirectional": [
+    {
+      "start_offset": 9024,
+      "end_offset": 9280,
+      "score": 1.0,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 12864,
+      "end_offset": 13120,
+      "score": 0.655095,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 13696,
+      "end_offset": 13952,
+      "score": 0.282347,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 16320,
+      "end_offset": 16576,
+      "score": 0.187927,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 9664,
+      "end_offset": 9920,
+      "score": 0.177966,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 192,
+      "end_offset": 448,
+      "score": 0.160959,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 7424,
+      "end_offset": 7680,
+      "score": 0.136236,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 14400,
+      "end_offset": 14656,
+      "score": 0.106647,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 14848,
+      "end_offset": 15104,
+      "score": 0.101303,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 14656,
+      "end_offset": 14912,
+      "score": 0.082548,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 1984,
+      "end_offset": 2240,
+      "score": 0.080274,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 2816,
+      "end_offset": 3072,
+      "score": 0.074454,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 2624,
+      "end_offset": 2880,
+      "score": 0.07125,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 4736,
+      "end_offset": 4992,
+      "score": 0.064166,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 9792,
+      "end_offset": 10048,
+      "score": 0.177966,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 13056,
+      "end_offset": 13312,
+      "score": 0.039715,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 576,
+      "end_offset": 832,
+      "score": 0.018379,
+      "direction": "malicious"
+    }
+  ],
+  "llm_explanation": {
+    "summary": "The model confidently classified this file as benign, primarily due to characteristics found in the `.reloc` section and standard PE headers. Attributions to low-entropy overlay regions containing non-suspicious strings further reinforced the benign classification.",
+    "key_indicators": [
+      "High attribution to the `.reloc` section (entropy 0.08), which is typical for benign relocation tables.",
+      "Attribution to PE Headers containing standard section names like '.text' and '`.rsrc'.",
+      "Multiple low-entropy (0.00) OVERLAY regions containing short, non-suspicious strings, suggesting benign data or padding."
+    ],
+    "risk_assessment": "This file is assessed as benign. The XAI results do not indicate any malicious behavior, packing, or obfuscation. The attributed regions are consistent with a legitimate executable.",
+    "confidence_note": "The explanation is highly confident, supported by the model's maximum prediction confidence (1.0000) and clear, consistent benign attributions across multiple PE structures."
+  },
+  "analysis_time_seconds": 0.096,
+  "file_name": "Windows_10.exe"
+}
