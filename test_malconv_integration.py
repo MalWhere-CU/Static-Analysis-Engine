@@ -82,7 +82,7 @@ def test_with_sample_exe():
         
         print(f"\nFound {len(exe_files)} sample files\n")
         
-        for exe_file in exe_files[:2]:  # Test first 5 files
+        for exe_file in exe_files[:]:  # Test first 5 files
             file_path = sample_dir / exe_file
             file_size = os.path.getsize(file_path)
             

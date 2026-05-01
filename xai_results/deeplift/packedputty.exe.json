@@ -1,0 +1,444 @@
+{
+  "file": "/wv/mohelkg1/Project/Malwhere/Static-Analysis-Engine/test_samples/packedputty.exe",
+  "file_size": 960104,
+  "method": "deeplift",
+  "pe_mapping": {
+    "file_info": {
+      "file": "/wv/mohelkg1/Project/Malwhere/Static-Analysis-Engine/test_samples/packedputty.exe",
+      "file_size": 960104,
+      "is_pe": true,
+      "sections": [
+        {
+          "name": "UPX0",
+          "raw_offset": 512,
+          "raw_size": 0,
+          "virtual_address": 4096,
+          "virtual_size": 823296,
+          "entropy": 0.0
+        },
+        {
+          "name": "UPX1",
+          "raw_offset": 512,
+          "raw_size": 924672,
+          "virtual_address": 827392,
+          "virtual_size": 925696,
+          "entropy": 7.8992
+        },
+        {
+          "name": ".rsrc",
+          "raw_offset": 925184,
+          "raw_size": 8704,
+          "virtual_address": 1753088,
+          "virtual_size": 12288,
+          "entropy": 3.9586
+        }
+      ],
+      "num_imports": 11,
+      "num_strings": 12045,
+      "entry_point": 1751040,
+      "image_base": 5368709120
+    },
+    "region_mappings": [
+      {
+        "start_offset": 363968,
+        "end_offset": 364224,
+        "section": {
+          "name": "UPX1",
+          "raw_offset": 512,
+          "raw_size": 924672,
+          "entropy": 7.8992
+        },
+        "strings": [
+          {
+            "value": "+Blx",
+            "offset": 364086,
+            "encoding": "ascii"
+          },
+          {
+            "value": "`DtZ",
+            "offset": 364187,
+            "encoding": "ascii"
+          }
+        ],
+        "imports": [],
+        "raw_hex": "dfff7737dd2e1d3783fa0a73238d049b908d1c584fec864262dc7f10a1ebb2bb0496931a88068b0d6dc8001b91bc69f74c6039db293834c8243a24d918c20833"
+      },
+      {
+        "start_offset": 931200,
+        "end_offset": 931456,
+        "section": {
+          "name": ".rsrc",
+          "raw_offset": 925184,
+          "raw_size": 8704,
+          "entropy": 3.9586
+        },
+        "strings": [
+          {
+            "value": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",
+            "offset": 931424,
+            "encoding": "ascii"
+          },
+          {
+            "value": "ProductVersion",
+            "offset": 931186,
+            "encoding": "unicode"
+          },
+          {
+            "value": "Release 0.83",
+            "offset": 931216,
+            "encoding": "unicode"
+          },
+          {
+            "value": "LegalCopyright",
+            "offset": 931250,
+            "encoding": "unicode"
+          },
+          {
+            "value": "Copyright ",
+            "offset": 931280,
+            "encoding": "unicode"
+          },
+          {
+            "value": " 1997-2025 Simon Tatham.",
+            "offset": 931302,
+            "encoding": "unicode"
+          },
+          {
+            "value": "VarFileInfo",
+            "offset": 931358,
+            "encoding": "unicode"
+          },
+          {
+            "value": "Translation",
+            "offset": 931390,
+            "encoding": "unicode"
+          }
+        ],
+        "imports": [],
+        "raw_hex": "560065007200730069006f006e000000520065006c006500610073006500200030002e0038003300000000006c00240001004c006500670061006c0043006f00"
+      },
+      {
+        "start_offset": 899776,
+        "end_offset": 900032,
+        "section": {
+          "name": "UPX1",
+          "raw_offset": 512,
+          "raw_size": 924672,
+          "entropy": 7.8992
+        },
+        "strings": [
+          {
+            "value": "GMql",
+            "offset": 899788,
+            "encoding": "ascii"
+          },
+          {
+            "value": "xp]0",
+            "offset": 899842,
+            "encoding": "ascii"
+          },
+          {
+            "value": "CK[`",
+            "offset": 900030,
+            "encoding": "ascii"
+          }
+        ],
+        "imports": [],
+        "raw_hex": "d9a2372a0e5c41d5eea946d6474d716c0affffffff76ceb73279ee34609917d9f0d798d59b7442b575539d7cb1b0e4991bfbabc73bbfeb4a1a2c2a528596f85f"
+      },
+      {
+        "start_offset": 529024,
+        "end_offset": 529280,
+        "section": {
+          "name": "UPX1",
+          "raw_offset": 512,
+          "raw_size": 924672,
+          "entropy": 7.8992
+        },
+        "strings": [
+          {
+            "value": "y!@\\",
+            "offset": 529021,
+            "encoding": "ascii"
+          },
+          {
+            "value": ".5X8",
+            "offset": 529080,
+            "encoding": "ascii"
+          },
+          {
+            "value": "hYFL",
+            "offset": 529093,
+            "encoding": "ascii"
+          },
+          {
+            "value": "+\\/,",
+            "offset": 529121,
+            "encoding": "ascii"
+          }
+        ],
+        "imports": [],
+        "raw_hex": "5ca34e9e93f76f16c6c8e1e437fb26ea47566fa40ec3562fc40edec837c5ef565ff0164f57500e96cf73f2dc1798cfd0f344bd6fe47beef42e3558380e7c58a7"
+      },
+      {
+        "start_offset": 816128,
+        "end_offset": 816384,
+        "section": {
+          "name": "UPX1",
+          "raw_offset": 512,
+          "raw_size": 924672,
+          "entropy": 7.8992
+        },
+        "strings": [
+          {
+            "value": "4R1l0",
+            "offset": 816235,
+            "encoding": "ascii"
+          }
+        ],
+        "imports": [],
+        "raw_hex": "f6fcba0636ffffffff3de493ecae4b3a43f1868381af726ff098298097232080b5cd7281790a7907080bf0ffffa938260f837febef9dd529568d1dabea3f1c3b"
+      },
+      {
+        "start_offset": 948352,
+        "end_offset": 948608,
+        "section": {
+          "name": "OVERLAY",
+          "raw_offset": 933888,
+          "raw_size": 26216,
+          "entropy": 0.0
+        },
+        "strings": [
+          {
+            "value": "g%!]",
+            "offset": 948415,
+            "encoding": "ascii"
+          },
+          {
+            "value": "\\yJ`.",
+            "offset": 948446,
+            "encoding": "ascii"
+          },
+          {
+            "value": "L7*,",
+            "offset": 948454,
+            "encoding": "ascii"
+          },
+          {
+            "value": "dAU|",
+            "offset": 948540,
+            "encoding": "ascii"
+          }
+        ],
+        "imports": [],
+        "raw_hex": "9c134c7234dfbcd571dfaa71dde1b96c8c3c125d65dabd5712b6436bffe5de4d661151cf99aeec17b6e871918cde49fedd3571a21527941ccf61e326bb6fa367"
+      },
+      {
+        "start_offset": 838656,
+        "end_offset": 838912,
+        "section": {
+          "name": "UPX1",
+          "raw_offset": 512,
+          "raw_size": 924672,
+          "entropy": 7.8992
+        },
+        "strings": [
+          {
+            "value": "H+\\!=",
+            "offset": 838738,
+            "encoding": "ascii"
+          }
+        ],
+        "imports": [],
+        "raw_hex": "fd0250053b310a7d59ab1e2d66bccbf3ffffffff67515b8f0fd7ee78d0f06d6f54d2a09579d2f632d365f841e40e050d1da440d8ffffffff8d61579cc8a475fd"
+      }
+    ]
+  },
+  "file_path": "/wv/mohelkg1/Project/Malwhere/Static-Analysis-Engine/test_samples/packedputty.exe",
+  "predicted_class": "malicious",
+  "confidence": 0.975352942943573,
+  "num_bytes": 960104,
+  "num_windows": 3751,
+  "window_size": 256,
+  "top_regions": [
+    {
+      "start_offset": 363968,
+      "end_offset": 364224,
+      "score": 1.0,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 931200,
+      "end_offset": 931456,
+      "score": 0.770807,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 899776,
+      "end_offset": 900032,
+      "score": 0.685711,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 529024,
+      "end_offset": 529280,
+      "score": 0.671916,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 816128,
+      "end_offset": 816384,
+      "score": 0.665413,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 948352,
+      "end_offset": 948608,
+      "score": 0.547174,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 838656,
+      "end_offset": 838912,
+      "score": 0.504428,
+      "direction": "malicious"
+    }
+  ],
+  "top_regions_bidirectional": [
+    {
+      "start_offset": 363968,
+      "end_offset": 364224,
+      "score": 1.0,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 931200,
+      "end_offset": 931456,
+      "score": 0.770807,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 334336,
+      "end_offset": 334592,
+      "score": 0.70352,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 899776,
+      "end_offset": 900032,
+      "score": 0.685711,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 529024,
+      "end_offset": 529280,
+      "score": 0.671916,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 816128,
+      "end_offset": 816384,
+      "score": 0.665413,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 93824,
+      "end_offset": 94080,
+      "score": 0.56378,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 948352,
+      "end_offset": 948608,
+      "score": 0.547174,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 454208,
+      "end_offset": 454464,
+      "score": 0.523395,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 838656,
+      "end_offset": 838912,
+      "score": 0.504428,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 611456,
+      "end_offset": 611712,
+      "score": 0.501372,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 260352,
+      "end_offset": 260608,
+      "score": 0.49848,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 925760,
+      "end_offset": 926016,
+      "score": 0.491338,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 785024,
+      "end_offset": 785280,
+      "score": 0.476521,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 428096,
+      "end_offset": 428352,
+      "score": 0.422398,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 638784,
+      "end_offset": 639040,
+      "score": 0.416716,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 256,
+      "end_offset": 512,
+      "score": 0.394306,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 649792,
+      "end_offset": 650048,
+      "score": 0.381842,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 631168,
+      "end_offset": 631424,
+      "score": 0.376904,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 616448,
+      "end_offset": 616704,
+      "score": 0.369803,
+      "direction": "benign"
+    }
+  ],
+  "llm_explanation": {
+    "summary": "The model confidently classified this file as malicious, primarily due to strong attribution to a highly-entropic 'UPX1' section. This indicates the presence of UPX packing, a common technique used by malware to obfuscate its true contents and evade detection.",
+    "key_indicators": [
+      "High entropy (7.90) in the 'UPX1' section, a strong indicator of packed or encrypted data.",
+      "Significant XAI attribution scores concentrated within the 'UPX1' section, confirming its importance to the malicious classification.",
+      "Presence of both 'UPX0' and 'UPX1' sections, characteristic of UPX-packed executables.",
+      "Generic, non-descriptive strings found within the highly attributed 'UPX1' section, consistent with packed data.",
+      "Minor attribution to the '.rsrc' section containing benign-looking strings, which might be part of the original legitimate application being packed or a decoy.",
+      "Minor attribution to a low-entropy 'OVERLAY' section, which could contain additional packed data or junk."
+    ],
+    "risk_assessment": "This file is highly likely to be packed malware, potentially a trojan, downloader, or other malicious payload. The UPX packing is a strong obfuscation technique used to hinder analysis and detection.",
+    "confidence_note": "The explanation is highly confident, given the model's very high prediction confidence (0.9754) and the clear, consistent attribution to the 'UPX1' section, which is a well-known indicator of packing often associated with malware."
+  },
+  "analysis_time_seconds": 0.684,
+  "file_name": "packedputty.exe"
+}

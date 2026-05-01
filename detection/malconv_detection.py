@@ -37,7 +37,8 @@ class MalConvDetector:
             dict: {'prediction': 'malicious' or 'benign', 'confidence': float}
         """
         try:
-            # Read file as bytes
+            # Read file as bytes (truncate to 4MB to match training max_len)
+            MAX_LEN = 4_000_000
             with open(file_path, 'rb') as f:
                 data = f.read()
             
