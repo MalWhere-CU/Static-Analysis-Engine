@@ -8,7 +8,6 @@ from utils.hashes import HashCalculator
 from yara_engine.db import get_rule_text_by_name
 
 load_dotenv()
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 DB_PATH = os.getenv("DB_PATH")
 
 class YaraReportGenerator:
@@ -53,7 +52,7 @@ class YaraReportGenerator:
             matched_rule_texts.append(meta_string)
 
         if self.yara_ai_explainer:
-            explainer = YaraRuleExplainer(api_key=OPENAI_API_KEY, yara_rules=matched_rule_texts)
+            explainer = YaraRuleExplainer(yara_rules=matched_rule_texts)
             self.report_data["yara_ai_explainer"] = explainer.explain_rule()
         else:
             self.report_data["yara_ai_explainer"] = "YARA AI explaination not enabled for this report"

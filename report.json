@@ -1,6 +1,6 @@
 {
     "scan_info": {
-        "timestamp": "2026-04-30T13:35:32.864701",
+        "timestamp": "2026-05-01T16:35:32.824720",
         "file_name": "test.exe",
         "hashes": {
             "md5": "44d88612fea8a8f36de82e1278abb02f",
@@ -23,5 +23,5 @@
     "summary": {
         "total_matches": 1
     },
-    "yara_ai_explainer": "YARA AI explaination not enabled for this report"
+    "yara_ai_explainer": "Summary: The matched file is an EICAR test file, which is a harmless standard file used to test the proper functioning of antivirus software. It contains no actual malicious payload or functionality and is designed solely for detection purposes.\nThreat: Test File (Severity: low)\nCapabilities:\n  - Antivirus software testing\n  - Harmless detection trigger\nRecommended Actions:\n  - Verify that antivirus software is correctly detecting the EICAR test file\n  - No further action is required as the file is benign and serves only as a test\n  - Ensure security awareness training covers EICAR files if encountered by users to prevent unnecessary alarm"
 }

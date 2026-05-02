@@ -4,6 +4,7 @@ import numpy as np
 
 # Match training max_len — model never learned patterns beyond this offset
 # MAX_INPUT_LEN = 4_000_000
+from utils.pe_mapper import PEMapper
 
 from .base import BaseXAI, AttributionResult, AttributionRegion
 from .ig import IntegratedGradients
@@ -13,7 +14,7 @@ from .gradient_shap import GradientSHAP
 from .feature_ablation import FeatureAblation
 from .smoothgrad import SmoothGradXAI
 from .lime_xai import LimeXAI
-
+from .explainer import XAIExplainer\
 
 AVAILABLE_METHODS = {
     'deeplift': lambda model, ws, tk: DeepLiftXAI(model, ws, tk),
@@ -54,7 +55,6 @@ class XAIPipeline:
         self.xai_method: BaseXAI = AVAILABLE_METHODS[method](model, window_size, top_k)
 
         if use_explainer:
-            from .explainer import XAIExplainer
             self._explainer = XAIExplainer()
 
     def analyze_file(self, file_path: str, target_class: Optional[int] = None) -> Dict[str, Any]:
@@ -108,7 +108,6 @@ class XAIPipeline:
                    attribution: AttributionResult) -> Optional[Dict]:
         """Map this method's attribution regions to PE structures."""
         try:
-            from utils.pe_mapper import PEMapper
             mapper = PEMapper(file_path)
 
             regions = attribution.top_regions
