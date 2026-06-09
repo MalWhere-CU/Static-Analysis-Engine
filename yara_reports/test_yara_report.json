@@ -1,0 +1,27 @@
+{
+    "scan_info": {
+        "timestamp": "2026-05-02T08:19:31.588313",
+        "file_name": "test.exe",
+        "hashes": {
+            "md5": "44d88612fea8a8f36de82e1278abb02f",
+            "sha256": "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f"
+        }
+    },
+    "detections": [
+        {
+            "rule_name": "SUSP_Just_EICAR",
+            "description": "Just an EICAR test file - this is boring but users asked for it",
+            "author": "Florian Roth (Nextron Systems)",
+            "date": "2019-03-24",
+            "threat_level": "Not specified",
+            "score": 40,
+            "mitre_attck": "N/A",
+            "reference": "http://2016.eicar.org/85-0-Download.html",
+            "tags": []
+        }
+    ],
+    "summary": {
+        "total_matches": 1
+    },
+    "yara_ai_explainer": "Summary: The matched YARA rule indicates that the file is an EICAR test file. This file is not malicious in itself but is specifically designed to be detected by antivirus software to test its functionality and configuration.\nThreat: Test File (Severity: low)\nCapabilities:\n  - Antivirus software testing\n  - Security product detection validation\nRecommended Actions:\n  - No immediate action required as this is a benign test file.\n  - Verify the file's origin if its presence is unexpected to ensure it was intentionally placed for testing.\n  - Confirm that your security solutions correctly detected and alerted on the EICAR test file."
+}
