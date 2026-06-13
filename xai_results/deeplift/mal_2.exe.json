@@ -1,0 +1,396 @@
+{
+  "file": "/wv/mohelkg1/Project/Malwhere/Static-Analysis-Engine/test_samples/mal_2.exe",
+  "file_size": 6259712,
+  "method": "deeplift",
+  "pe_mapping": {
+    "file_info": {
+      "file": "/wv/mohelkg1/Project/Malwhere/Static-Analysis-Engine/test_samples/mal_2.exe",
+      "file_size": 6259712,
+      "is_pe": true,
+      "sections": [
+        {
+          "name": ".text",
+          "raw_offset": 1024,
+          "raw_size": 1612288,
+          "virtual_address": 4096,
+          "virtual_size": 1611928,
+          "entropy": 6.5264
+        },
+        {
+          "name": ".rdata",
+          "raw_offset": 1613312,
+          "raw_size": 900608,
+          "virtual_address": 1617920,
+          "virtual_size": 900116,
+          "entropy": 6.4087
+        },
+        {
+          "name": ".data",
+          "raw_offset": 2513920,
+          "raw_size": 3033088,
+          "virtual_address": 2519040,
+          "virtual_size": 3089340,
+          "entropy": 6.9834
+        },
+        {
+          "name": ".pdata",
+          "raw_offset": 5547008,
+          "raw_size": 96768,
+          "virtual_address": 5611520,
+          "virtual_size": 96384,
+          "entropy": 6.1991
+        },
+        {
+          "name": ".rsrc",
+          "raw_offset": 5643776,
+          "raw_size": 2048,
+          "virtual_address": 5709824,
+          "virtual_size": 2040,
+          "entropy": 3.4202
+        },
+        {
+          "name": ".reloc",
+          "raw_offset": 5645824,
+          "raw_size": 613888,
+          "virtual_address": 5713920,
+          "virtual_size": 613738,
+          "entropy": 4.4126
+        }
+      ],
+      "num_imports": 181,
+      "num_strings": 74857,
+      "entry_point": 1589808,
+      "image_base": 6442450944
+    },
+    "region_mappings": [
+      {
+        "start_offset": 1300928,
+        "end_offset": 1301184,
+        "section": {
+          "name": ".text",
+          "raw_offset": 1024,
+          "raw_size": 1612288,
+          "entropy": 6.5264
+        },
+        "strings": [],
+        "imports": [],
+        "raw_hex": "488bd0488d49f8e9548bf4ff488b4930488b4108488b00c3488b4930488b4140488b00c3488b4930488b4140488b00c3488b4930488b4118488b00c3488b4948"
+      },
+      {
+        "start_offset": 2512640,
+        "end_offset": 2512896,
+        "section": {
+          "name": ".rdata",
+          "raw_offset": 1613312,
+          "raw_size": 900608,
+          "entropy": 6.4087
+        },
+        "strings": [
+          {
+            "value": "atan",
+            "offset": 2512638,
+            "encoding": "ascii"
+          },
+          {
+            "value": "atan2",
+            "offset": 2512646,
+            "encoding": "ascii"
+          },
+          {
+            "value": "ceil",
+            "offset": 2512654,
+            "encoding": "ascii"
+          },
+          {
+            "value": "cosf",
+            "offset": 2512668,
+            "encoding": "ascii"
+          },
+          {
+            "value": "floor",
+            "offset": 2512676,
+            "encoding": "ascii"
+          },
+          {
+            "value": "fmod",
+            "offset": 2512684,
+            "encoding": "ascii"
+          },
+          {
+            "value": "free",
+            "offset": 2512692,
+            "encoding": "ascii"
+          },
+          {
+            "value": "malloc",
+            "offset": 2512706,
+            "encoding": "ascii"
+          },
+          {
+            "value": "modf",
+            "offset": 2512716,
+            "encoding": "ascii"
+          },
+          {
+            "value": "sinf",
+            "offset": 2512736,
+            "encoding": "ascii"
+          },
+          {
+            "value": "strlen",
+            "offset": 2512750,
+            "encoding": "ascii"
+          },
+          {
+            "value": "strtoull",
+            "offset": 2512760,
+            "encoding": "ascii"
+          },
+          {
+            "value": "_stricmp",
+            "offset": 2512772,
+            "encoding": "ascii"
+          },
+          {
+            "value": "strcmp",
+            "offset": 2512784,
+            "encoding": "ascii"
+          },
+          {
+            "value": "strcpy",
+            "offset": 2512794,
+            "encoding": "ascii"
+          },
+          {
+            "value": "__stdio_common_vsnprintf_s",
+            "offset": 2512804,
+            "encoding": "ascii"
+          },
+          {
+            "value": "api-ms-win-crt-math-l1-1-0.dll",
+            "offset": 2512832,
+            "encoding": "ascii"
+          },
+          {
+            "value": "api-ms-win-crt-heap-l1-1-0.dll",
+            "offset": 2512864,
+            "encoding": "ascii"
+          }
+        ],
+        "imports": [],
+        "raw_hex": "616e000055006174616e32007c006365696c00009000636f73009100636f73660000be00666c6f6f7200c900666d6f6400001800667265650000da006c6f6700"
+      },
+      {
+        "start_offset": 2186240,
+        "end_offset": 2186496,
+        "section": {
+          "name": ".rdata",
+          "raw_offset": 1613312,
+          "raw_size": 900608,
+          "entropy": 6.4087
+        },
+        "strings": [],
+        "imports": [],
+        "raw_hex": "00000000000000007805050000000000a000010074250100000000560000000000000000000000000100000010c0d7fc00000000000000004805050000000000"
+      },
+      {
+        "start_offset": 1959872,
+        "end_offset": 1960128,
+        "section": {
+          "name": ".rdata",
+          "raw_offset": 1613312,
+          "raw_size": 900608,
+          "entropy": 6.4087
+        },
+        "strings": [
+          {
+            "value": "``````",
+            "offset": 1959874,
+            "encoding": "ascii"
+          },
+          {
+            "value": "^^^^^^^`^",
+            "offset": 1959936,
+            "encoding": "ascii"
+          },
+          {
+            "value": "^^^^^^^^",
+            "offset": 1959949,
+            "encoding": "ascii"
+          },
+          {
+            "value": "^^^^^^^^^^``^",
+            "offset": 1959963,
+            "encoding": "ascii"
+          },
+          {
+            "value": "``^^^^^^^^^^^^^^{^^^^^^^^^^^^^^^^`^^^^",
+            "offset": 1959990,
+            "encoding": "ascii"
+          },
+          {
+            "value": "^^^^^",
+            "offset": 1960046,
+            "encoding": "ascii"
+          },
+          {
+            "value": "zzzzzzzzzz^^^^^^^^^zzzzzzzzz",
+            "offset": 1960073,
+            "encoding": "ascii"
+          },
+          {
+            "value": "^^^^",
+            "offset": 1960122,
+            "encoding": "ascii"
+          }
+        ],
+        "imports": [],
+        "raw_hex": "0f0f6060606060608c8c8c8c8c8c8c8c8c8c8d6060600e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0f0f0f0f0f0f0f5e5e8b8b5e60607f7f0f0f0f0f0f8b5e8b"
+      }
+    ]
+  },
+  "file_path": "/wv/mohelkg1/Project/Malwhere/Static-Analysis-Engine/test_samples/mal_2.exe",
+  "predicted_class": "benign",
+  "confidence": 0.9998775720596313,
+  "num_bytes": 6259712,
+  "num_windows": 24452,
+  "window_size": 256,
+  "top_regions": [
+    {
+      "start_offset": 1300928,
+      "end_offset": 1301184,
+      "score": 1.0,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 2512640,
+      "end_offset": 2512896,
+      "score": 0.552974,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 2186240,
+      "end_offset": 2186496,
+      "score": 0.539426,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 1959872,
+      "end_offset": 1960128,
+      "score": 0.454226,
+      "direction": "benign"
+    }
+  ],
+  "top_regions_bidirectional": [
+    {
+      "start_offset": 1300928,
+      "end_offset": 1301184,
+      "score": 1.0,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 2512640,
+      "end_offset": 2512896,
+      "score": 0.552974,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 2186240,
+      "end_offset": 2186496,
+      "score": 0.539426,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 1347200,
+      "end_offset": 1347456,
+      "score": 0.489979,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 5575296,
+      "end_offset": 5575552,
+      "score": 0.461475,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 1959872,
+      "end_offset": 1960128,
+      "score": 0.454226,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 1614848,
+      "end_offset": 1615104,
+      "score": 0.364224,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 1872832,
+      "end_offset": 1873088,
+      "score": 0.358652,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 2248000,
+      "end_offset": 2248256,
+      "score": 0.348688,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 1308992,
+      "end_offset": 1309248,
+      "score": 0.343259,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 2000832,
+      "end_offset": 2001088,
+      "score": 0.327049,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 2379072,
+      "end_offset": 2379328,
+      "score": 0.318891,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 0,
+      "end_offset": 256,
+      "score": 0.282151,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 1958912,
+      "end_offset": 1959168,
+      "score": 0.280276,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 5827392,
+      "end_offset": 5827648,
+      "score": 0.26401,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 1875456,
+      "end_offset": 1875712,
+      "score": 0.245583,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 1960000,
+      "end_offset": 1960256,
+      "score": 0.454226,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 1378752,
+      "end_offset": 1379008,
+      "score": 0.235459,
+      "direction": "benign"
+    }
+  ],
+  "analysis_time_seconds": 4.809,
+  "file_name": "mal_2.exe"
+}
