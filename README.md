@@ -1,6 +1,64 @@
-<h1>Design V1.0</h1>
+# 🛡️ Static Analysis Engine
 
+An automated, containerized static preprocessing and signature analysis engine for advanced malware inspection. 
+
+This repository leverages a multi-container pipeline that dynamically identifies file types, applies tailored static unpacking or extraction routines, and passes clean payloads downstream to a high-fidelity YARA scanning layer and LLM parsing module.
+
+---
+
+## 🛠️ System Architecture & Unpacking Pipeline
+
+
+Previously, this tool only executed basic `UPX -d` decompression flags. It has been re-architected into a multi-tiered static preprocessing pipeline. 
+
+Instead of routing binaries through slow, complex CPU emulators (which defeats the performance speed-run of static preprocessing), it relies on `die-python` (Detect It Easy) to dynamically flag structures and route them into safe, lightning-fast static extraction layers:
+
+<h1>Design V1.0</h1>
 <img src="design-v1.0.jpg" alt="design" width="800"/>
+
+
+### Supported Extraction Capabilities
+1. **Native PE Compression:** Unpacks binaries compressed with `UPX` cleanly.
+2. **.NET Assemblies:** Automatically fixes obfuscated or packed metadata structures using `de4dot`.
+3. **Python Script Bundlers:** Detects PyInstaller or py2exe stubs and extracts raw source data via `pyinstxtractor`.
+4. **Installer Packages & SFX Drop-zones:** Extracts internal deployment structures via `7z` (NSIS, Inno Setup, Self-Extracting archives).
+5. **Heavy Protectors Bypass:** Flags advanced virtualizers (`Themida`, `VMProtect`) safely as packed, but skips execution completely to avoid engine deadlocks—passing original layers cleanly down to the dedicated Dynamic VM analysis stage.
+
+---
+
+## 🚀 Getting Started (Docker Compose Environment)
+
+The entire static analysis suite—including system assets, local database frameworks, and memory caching layers—is fully containerized. **Do not execute these scripts directly on your host operating system to prevent malware contamination.**
+
+### 1. Setup Configuration
+Clone the repository and instantiate your localized environment variables:
+```bash
+git clone [https://github.com/MalWhere-CU/Static-Analysis-Engine](https://github.com/MalWhere-CU/Static-Analysis-Engine)
+cd Static-Analysis-Engine
+```
+
+Create a .env file inside the root directory:
+```.env
+OPENAI_API_KEY=your_openai_api_key_here
+DB_PATH=rules.db
+REDIS_HOST=redis
+REDIS_PORT=6379
+```
+
+
+### 2. Launching the Whole Static Suite
+To spin up the multi-container application layer (Python application worker nodes + isolated Redis caching database clusters):
+```bash
+docker compose up --build
+```
+
+### 3. Testing the Unpacking Sub-Module Standalone
+If you want to run isolated pipeline development checks specifically on the unpacking engine without triggering the entire overarching main_pipeline worker loop, execute via container override flags:
+```bash
+docker compose run --rm app python -m unpacking.pipeline /test_samples/test_target.exe
+```
+(Note: Always drop your test binaries inside the local ./tests_samples/ folder on your host machine; it is safely mounted automatically into the isolated container workspace).
+
 
 <hr>
 <h2>YARA Rules</h2>
@@ -9,17 +67,6 @@
 <br/> It currently contains 737 Rules
 </p>
 
-<h2>How to Use?</h2>
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/MalWhere-CU/Static-Analysis-Engine
-   cd Static-Analysis-Engine
-2. **Run Setup Script**
-    ```bash
-    sudo chmod +x setup.sh
-    ./setup.sh
----
 
 <h2>Limitations & Future Work</h2>
 

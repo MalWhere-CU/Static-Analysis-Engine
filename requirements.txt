@@ -1,6 +1,7 @@
 yara-python
 pefile
 die-python
+unicorn-unipacker
 unipacker
 requests
 openai
@@ -15,3 +16,4 @@ matplotlib
 langchain-google-genai
 langchain-core
 pydantic
+qiling
