@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   redis:
     image: redis:7-alpine
@@ -16,11 +14,9 @@ services:
       - redis
     env_file:
       - .env
-    environment:
-      - REDIS_HOST=redis  # Binds python transparently to the container alias
     volumes:
       - .:/app
-      - ./samples:/samples # Directory containing malicious binaries for processing
+      - ./test_samples:/test_samples
 
 volumes:
   redis_data:

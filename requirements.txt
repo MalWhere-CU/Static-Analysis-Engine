@@ -17,3 +17,4 @@ langchain-google-genai
 langchain-core
 pydantic
 qiling
+pytest

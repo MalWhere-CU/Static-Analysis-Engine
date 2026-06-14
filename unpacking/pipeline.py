@@ -1,13 +1,13 @@
 import os
-from detector import PackingDetector
-from extractors import (
+from unpacking.detector import PackingDetector
+from unpacking.extractors import (
     UPXExtractor, 
     De4DotExtractor, 
     PyInstExtractor, 
     ArchiveExtractor
 )
 
-class StaticPreprocessingPipeline:
+class UnpackingPipeline:
     def __init__(self):
         self.detector = PackingDetector()
         
@@ -62,7 +62,7 @@ if __name__ == "__main__":
     # Ensure you have a test sample available to pass in here
     target_file = "sample_malware.exe" 
     
-    pipeline = StaticPreprocessingPipeline()
+    pipeline = UnpackingPipeline()
     
     if os.path.exists(target_file):
         final_artifact = pipeline.process_file(target_file)

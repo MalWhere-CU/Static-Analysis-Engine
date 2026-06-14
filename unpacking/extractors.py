@@ -1,3 +1,4 @@
+
 import os
 import shutil
 import subprocess
@@ -43,17 +44,38 @@ class De4DotExtractor(ExtractorBase):
 
 class PyInstExtractor(ExtractorBase):
     def execute(self, file_path: str) -> tuple[bool, str]:
-        # pyinstxtractor.py must be downloaded and available in the same directory or PATH
-        cmd = ["python", "pyinstxtractor.py", file_path]
+        # 1. Handle Docker container path fallback cleanly
+        script_path = "/opt/pyinstxtractor.py" if os.path.exists("/opt/pyinstxtractor.py") else "pyinstxtractor.py"
+        
+        # 2. Extract just the filename, since we'll change the execution directory context
+        filename = os.path.basename(file_path)
+        cmd = ["python", script_path, filename]
+        
         expected_output_dir = f"{file_path}_extracted"
         
         try:
-            res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+            # 3. Resolve the directory where the sample lives
+            sample_dir = os.path.dirname(file_path) or "."
+            
+            # 4. Run the subprocess INSIDE the sample directory (cwd)
+            # This forces pyinstxtractor to drop its output folders exactly where we expect them
+            res = subprocess.run(
+                cmd, 
+                stdout=subprocess.PIPE, 
+                stderr=subprocess.PIPE, 
+                text=True,
+                cwd=sample_dir
+            )
+            
             if os.path.exists(expected_output_dir):
                 return True, expected_output_dir
-            return False, f"PyInstaller Extraction Failed: {res.stderr}"
+                
+            # Fallback: Capture stdout if stderr is blank (pyinstxtractor often prints logs to stdout)
+            error_msg = res.stderr.strip() or res.stdout.strip()
+            return False, f"PyInstaller Extraction Failed: {error_msg}"
+            
         except FileNotFoundError:
-            return False, "Python or pyinstxtractor.py not found."
+            return False, f"Python or extractor script not found at {script_path}."
 
 class ArchiveExtractor(ExtractorBase):
     def execute(self, file_path: str) -> tuple[bool, str]:

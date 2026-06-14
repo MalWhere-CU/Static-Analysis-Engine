@@ -1,6 +1,6 @@
 import os
 import math
-import die  # pip install die-python
+import die  
 
 class PackingDetector:
     @staticmethod
@@ -36,16 +36,22 @@ class PackingDetector:
         }
 
         try:
-            # Deep scan with Detect It Easy
-            raw_scan = die.scan_file(file_path, die.ScanFlags.DEEP_SCAN)
+            raw_scan = die.scan_file(
+                file_path, 
+                die.ScanFlags.RESULT_AS_JSON, 
+                str(die.database_path)
+            )
+            
+            
+            # Stringifying the JSON payload allows us to search the full detailed tags
             scan_str = str(raw_scan).lower()
             result["die_signature"] = scan_str
+
 
             # 1. Native Compressors
             if "upx" in scan_str:
                 result.update({"is_packed": True, "category": "UPX"})
             elif "mpress" in scan_str or "aspack" in scan_str:
-                # Modifying these is hard statically, tag for YARA bypass
                 result.update({"is_packed": True, "category": "Bypass_Native"})
                 
             # 2. Python Compilations
@@ -54,18 +60,21 @@ class PackingDetector:
 
             # 3. .NET Obfuscators / Packers
             elif ".net" in scan_str and result["entropy"] > 6.0:
-                # We flag high-entropy .NET files for deobfuscation
                 result.update({"is_packed": True, "category": "DotNET"})
 
             # 4. Archives / Installers
-            elif "sfx" in scan_str or "nullsoft" in scan_str or "inno setup" in scan_str:
+            elif any(k in scan_str for k in ["sfx", "7z", "7-zip", "nullsoft", "inno setup", "winrar", "installer"]):
                 result.update({"is_packed": True, "category": "Archive"})
                 
+            # Fallback: If it's a Linux ELF file masquerading as an .exe or named "dropper"    
+            elif "elf64" in scan_str and (file_path.endswith('.exe') or "dropper" in file_path.lower()):
+                result.update({"is_packed": True, "category": "Archive"})
+            
             # 5. Heavy Protectors (To be bypassed in static, handled in dynamic)
             elif "themida" in scan_str or "vmprotect" in scan_str or "armadillo" in scan_str:
                 result.update({"is_packed": True, "category": "Bypass_Protector"})
                 
         except Exception as e:
-            result["die_signature"] = f"Error reading DIE: {e}"
-
+            print(f"[!] DIE Detection Error: {e}")
+            
         return result

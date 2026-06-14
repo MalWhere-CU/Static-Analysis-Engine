@@ -2,13 +2,14 @@ import os
 import json
 import time
 import sqlite3
+import shutil
 import yara
-from detection.packer_detection import detect_packer
+
+from dotenv import load_dotenv
+from unpacking.pipeline import UnpackingPipeline
 from detection.malconv_detection import MalConvDetector
 from reports.yara_report_generator import YaraReportGenerator
-from unpacking.unpacker import UnpackFile
 from yara_engine.engine import YaraEngine
-from dotenv import load_dotenv
 
 load_dotenv()
 DB_PATH = os.getenv("DB_PATH")
@@ -66,6 +67,10 @@ class StaticPipeline:
         self.generated_yara_engine = _load_generated_yara_engine()
         self.yara_reporter = YaraReportGenerator(self.file_path, yara_ai_explainer)
         self.malconv_detector = MalConvDetector()
+        
+        # Instantiate our newly designed unpacking orchestrator
+        self.preprocessor = UnpackingPipeline()
+        
         self.use_xai = use_xai
         self.xai_explainer = xai_explainer & use_xai
         self.xai_method = xai_method
@@ -77,6 +82,7 @@ class StaticPipeline:
             "file": self.file_path,
             "packed": False,
             "unpacked": False,
+            "packer_category": "Clean",
             "matched": False,
             "match_source": None,  # 'rules.db', 'generated_rules.db', or 'malconv'
             "yara_matches": [],
@@ -90,18 +96,26 @@ class StaticPipeline:
         }
 
         unpacked_path = None
+        file_to_scan = self.file_path
 
         try:
-            # ─── Step 0: Packer detection & unpacking ─────────────────────────
-            packer_info = detect_packer(self.file_path)
+            # ─── Step 0: Packer Detection & Optimized Unpacking ─────────────────────────
+            
+            # 1. Ask the detector layer for the file's structural status
+            analysis = self.preprocessor.detector.analyze(self.file_path)
+            result["packed"] = analysis.get("is_packed", False)
+            result["packer_category"] = analysis.get("category", "Unknown")
 
-            if packer_info.get("die_match") or packer_info.get("section_match") or packer_info.get("high_entropy"):
-                result["packed"] = True
-                unpacked_path = UnpackFile.unpack(self.file_path)
-                if unpacked_path and os.path.exists(unpacked_path):
+            if result["packed"]:
+                print(f"[*] Preprocessing: Packed payload detected ({result['packer_category']}). Routing to extractors...")
+                # 2. Process the file through the correct extractor
+                processed_output = self.preprocessor.process_file(self.file_path)
+                
+                # 3. If the pipeline successfully extracted a new file/folder, update tracking
+                if processed_output != self.file_path and os.path.exists(processed_output):
                     result["unpacked"] = True
-
-            file_to_scan = unpacked_path if result["unpacked"] else self.file_path
+                    unpacked_path = processed_output
+                    file_to_scan = unpacked_path
 
             # ─── Step 1: Scan with rules.db (curated YARA rules) ──────────────
             matches = self.yara_engine.scan_file(file_to_scan)
@@ -159,8 +173,17 @@ class StaticPipeline:
             result["error"] = str(e)
 
         result["scan_time"] = round(time.time() - start_time, 3)
-        if unpacked_path:
-            UnpackFile.cleanup(unpacked_path)
+        
+        # ─── Step 5: Artifact Cleanup ───────────────────────────────────────
+        if unpacked_path and os.path.exists(unpacked_path):
+            try:
+                if os.path.isdir(unpacked_path):
+                    shutil.rmtree(unpacked_path)  # Used for pyinstxtractor / 7z dumps
+                else:
+                    os.remove(unpacked_path)      # Used for upx / de4dot outputs
+                print(f"[*] Cleanup: Removed temporary extracted artifacts at {unpacked_path}")
+            except Exception as e:
+                print(f"[!] Cleanup Error: Failed to remove {unpacked_path} - {e}")
 
         return result
 

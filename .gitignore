@@ -2,3 +2,6 @@
 venv/
 *env/
 __pycache__/
+
+test_samples/build
+pyinstaller_packed.exe_extracted
