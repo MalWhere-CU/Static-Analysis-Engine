@@ -52,13 +52,11 @@ To spin up the multi-container application layer (Python application worker node
 docker compose up --build
 ```
 
-### 3. Testing the Unpacking Sub-Module Standalone
-If you want to run isolated pipeline development checks specifically on the unpacking engine without triggering the entire overarching main_pipeline worker loop, execute via container override flags:
+### 3. Open an Interactive Terminal Inside Your Container
+Run this command in your project root terminal to spin up your container and drop straight into its bash shell:
 ```bash
-docker compose run --rm app python -m unpacking.pipeline /test_samples/test_target.exe
+docker compose run --rm --entrypoint /bin/bash app
 ```
-(Note: Always drop your test binaries inside the local ./tests_samples/ folder on your host machine; it is safely mounted automatically into the isolated container workspace).
-
 
 <hr>
 <h2>YARA Rules</h2>
