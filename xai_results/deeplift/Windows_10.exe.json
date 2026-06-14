@@ -332,16 +332,6 @@
       "direction": "malicious"
     }
   ],
-  "llm_explanation": {
-    "summary": "The model confidently classified this file as benign, primarily due to characteristics found in the `.reloc` section and standard PE headers. Attributions to low-entropy overlay regions containing non-suspicious strings further reinforced the benign classification.",
-    "key_indicators": [
-      "High attribution to the `.reloc` section (entropy 0.08), which is typical for benign relocation tables.",
-      "Attribution to PE Headers containing standard section names like '.text' and '`.rsrc'.",
-      "Multiple low-entropy (0.00) OVERLAY regions containing short, non-suspicious strings, suggesting benign data or padding."
-    ],
-    "risk_assessment": "This file is assessed as benign. The XAI results do not indicate any malicious behavior, packing, or obfuscation. The attributed regions are consistent with a legitimate executable.",
-    "confidence_note": "The explanation is highly confident, supported by the model's maximum prediction confidence (1.0000) and clear, consistent benign attributions across multiple PE structures."
-  },
-  "analysis_time_seconds": 0.096,
+  "analysis_time_seconds": 0.693,
   "file_name": "Windows_10.exe"
 }

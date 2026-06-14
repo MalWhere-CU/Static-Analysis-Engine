@@ -348,16 +348,6 @@
       "direction": "benign"
     }
   ],
-  "llm_explanation": {
-    "summary": "The model confidently classified this file as benign, with XAI attributing its decision to standard PE structures. Specifically, the model found benign indicators within the `.text` section and PE headers, which contain typical application code and metadata.",
-    "key_indicators": [
-      "High attribution scores to the `.text` section, which exhibits normal entropy (6.52) consistent with compiled code.",
-      "Presence of common application-related strings such as 'System.Resources.ResourceReader', 'System.Windows.Forms.CheckBox', 'chkProgressBar', and 'SettingsPage'.",
-      "Attribution to the PE headers, containing standard section names like '.text' and '.rsrc'."
-    ],
-    "risk_assessment": "Low risk. The file appears to be a legitimate application, with no indicators of malicious activity or obfuscation detected by the model or XAI.",
-    "confidence_note": "The model's prediction confidence is extremely high (0.9999), and the XAI explanation clearly highlights standard, benign PE features, strongly supporting the benign classification."
-  },
-  "analysis_time_seconds": 0.254,
+  "analysis_time_seconds": 0.184,
   "file_name": "softonic103.exe"
 }

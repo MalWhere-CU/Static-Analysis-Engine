@@ -446,17 +446,6 @@
       "direction": "benign"
     }
   ],
-  "llm_explanation": {
-    "summary": "The model classified this file as benign, primarily due to the presence of standard PE structures and benign strings within the .rsrc and .text sections. Key regions contributing to this classification include typical application manifest data, .NET assembly attributes, and legitimate code signing information.",
-    "key_indicators": [
-      "Standard .rsrc section content indicating requested privileges (asInvoker)",
-      "Typical .text section strings related to .NET assembly metadata (e.g., 'AssemblyTitleAttribute', 'System.Diagnostics', 'v2.0.50727')",
-      "PE Headers contributing to the benign classification",
-      "Overlay region containing legitimate strings like 'Microsoft Corporation' and 'Microsoft Code Signing PCA'"
-    ],
-    "risk_assessment": "Low risk. The attributed features are consistent with a legitimate, likely .NET-based application, showing no signs of malicious intent or obfuscation.",
-    "confidence_note": "The explanation is moderately confident, aligning with the model's prediction confidence of 0.7507. The attributed regions clearly highlight standard, benign PE characteristics, reinforcing the benign classification."
-  },
-  "analysis_time_seconds": 0.032,
+  "analysis_time_seconds": 0.038,
   "file_name": "Windows_111.exe"
 }

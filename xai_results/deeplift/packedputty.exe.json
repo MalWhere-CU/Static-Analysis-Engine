@@ -426,19 +426,6 @@
       "direction": "benign"
     }
   ],
-  "llm_explanation": {
-    "summary": "The model confidently classified this file as malicious, primarily due to strong attribution to a highly-entropic 'UPX1' section. This indicates the presence of UPX packing, a common technique used by malware to obfuscate its true contents and evade detection.",
-    "key_indicators": [
-      "High entropy (7.90) in the 'UPX1' section, a strong indicator of packed or encrypted data.",
-      "Significant XAI attribution scores concentrated within the 'UPX1' section, confirming its importance to the malicious classification.",
-      "Presence of both 'UPX0' and 'UPX1' sections, characteristic of UPX-packed executables.",
-      "Generic, non-descriptive strings found within the highly attributed 'UPX1' section, consistent with packed data.",
-      "Minor attribution to the '.rsrc' section containing benign-looking strings, which might be part of the original legitimate application being packed or a decoy.",
-      "Minor attribution to a low-entropy 'OVERLAY' section, which could contain additional packed data or junk."
-    ],
-    "risk_assessment": "This file is highly likely to be packed malware, potentially a trojan, downloader, or other malicious payload. The UPX packing is a strong obfuscation technique used to hinder analysis and detection.",
-    "confidence_note": "The explanation is highly confident, given the model's very high prediction confidence (0.9754) and the clear, consistent attribution to the 'UPX1' section, which is a well-known indicator of packing often associated with malware."
-  },
-  "analysis_time_seconds": 0.684,
+  "analysis_time_seconds": 0.821,
   "file_name": "packedputty.exe"
 }

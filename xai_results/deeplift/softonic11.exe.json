@@ -1,0 +1,398 @@
+{
+  "file": "/wv/mohelkg1/Project/Malwhere/Static-Analysis-Engine/test_samples/softonic11.exe",
+  "file_size": 392704,
+  "method": "deeplift",
+  "pe_mapping": {
+    "file_info": {
+      "file": "/wv/mohelkg1/Project/Malwhere/Static-Analysis-Engine/test_samples/softonic11.exe",
+      "file_size": 392704,
+      "is_pe": true,
+      "sections": [
+        {
+          "name": ".text",
+          "raw_offset": 512,
+          "raw_size": 219648,
+          "virtual_address": 8192,
+          "virtual_size": 219560,
+          "entropy": 5.1355
+        },
+        {
+          "name": ".rsrc",
+          "raw_offset": 220160,
+          "raw_size": 172032,
+          "virtual_address": 229376,
+          "virtual_size": 171696,
+          "entropy": 4.4148
+        },
+        {
+          "name": ".reloc",
+          "raw_offset": 392192,
+          "raw_size": 512,
+          "virtual_address": 401408,
+          "virtual_size": 12,
+          "entropy": 0.1019
+        }
+      ],
+      "num_imports": 1,
+      "num_strings": 1073,
+      "entry_point": 227746,
+      "image_base": 4194304
+    },
+    "region_mappings": [
+      {
+        "start_offset": 41856,
+        "end_offset": 42112,
+        "section": {
+          "name": ".text",
+          "raw_offset": 512,
+          "raw_size": 219648,
+          "entropy": 5.1355
+        },
+        "strings": [
+          {
+            "value": "dPSsh.c",
+            "offset": 41904,
+            "encoding": "ascii"
+          },
+          {
+            "value": "IEND",
+            "offset": 41991,
+            "encoding": "ascii"
+          },
+          {
+            "value": "lSystem.Resources.ResourceReader, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089#System.Resources.RuntimeResourceSet",
+            "offset": 42016,
+            "encoding": "ascii"
+          }
+        ],
+        "imports": [],
+        "raw_hex": "b2f231a61c6a81e6021b32aef20afc0e7cf51b4b07fafe3f0c194fcd5446e4ad429b16e0f4a9062b4409744ea4b3cad164505373682e63caa11618b66147b41c"
+      },
+      {
+        "start_offset": 14400,
+        "end_offset": 14656,
+        "section": {
+          "name": ".text",
+          "raw_offset": 512,
+          "raw_size": 219648,
+          "entropy": 5.1355
+        },
+        "strings": [],
+        "imports": [],
+        "raw_hex": "01004d076a050100ea1593050100fa1b760501001b127a0501002e007a05010035007f050100701b7a0501000b14970501005a10720501004d076a050100fa1b"
+      },
+      {
+        "start_offset": 220288,
+        "end_offset": 220544,
+        "section": {
+          "name": ".rsrc",
+          "raw_offset": 220160,
+          "raw_size": 172032,
+          "entropy": 4.4148
+        },
+        "strings": [],
+        "imports": [],
+        "raw_hex": "09000000500100800a00000068010080000000000000000000000000000001000000000010020000000000000000000000000000000001000000000048440000"
+      },
+      {
+        "start_offset": 22208,
+        "end_offset": 22464,
+        "section": {
+          "name": ".text",
+          "raw_offset": 512,
+          "raw_size": 219648,
+          "entropy": 5.1355
+        },
+        "strings": [
+          {
+            "value": "StopDownload",
+            "offset": 22200,
+            "encoding": "ascii"
+          },
+          {
+            "value": "StartDownload",
+            "offset": 22213,
+            "encoding": "ascii"
+          },
+          {
+            "value": "get_BytesDownloaded",
+            "offset": 22231,
+            "encoding": "ascii"
+          },
+          {
+            "value": "set_BytesDownloaded",
+            "offset": 22251,
+            "encoding": "ascii"
+          },
+          {
+            "value": "_bytesDownloaded",
+            "offset": 22271,
+            "encoding": "ascii"
+          },
+          {
+            "value": "get_TimeDownloadEnded",
+            "offset": 22288,
+            "encoding": "ascii"
+          },
+          {
+            "value": "set_TimeDownloadEnded",
+            "offset": 22310,
+            "encoding": "ascii"
+          },
+          {
+            "value": "timeDownloadEnded",
+            "offset": 22332,
+            "encoding": "ascii"
+          },
+          {
+            "value": "add_ProgressChanged",
+            "offset": 22350,
+            "encoding": "ascii"
+          },
+          {
+            "value": "_installer_ProgressChanged",
+            "offset": 22370,
+            "encoding": "ascii"
+          },
+          {
+            "value": "add_DownloadProgressChanged",
+            "offset": 22397,
+            "encoding": "ascii"
+          },
+          {
+            "value": "add_LinkClicked",
+            "offset": 22425,
+            "encoding": "ascii"
+          },
+          {
+            "value": "_lnkPortableApp_LinkClicked",
+            "offset": 22441,
+            "encoding": "ascii"
+          }
+        ],
+        "imports": [],
+        "raw_hex": "6c6f6164005374617274446f776e6c6f616400416464006765745f4279746573446f776e6c6f61646564007365745f4279746573446f776e6c6f61646564005f"
+      },
+      {
+        "start_offset": 32896,
+        "end_offset": 33152,
+        "section": {
+          "name": ".text",
+          "raw_offset": 512,
+          "raw_size": 219648,
+          "entropy": 5.1355
+        },
+        "strings": [
+          {
+            "value": "The WeatherMate Portable {0} {1}",
+            "offset": 32852,
+            "encoding": "unicode"
+          },
+          {
+            "value": "completed successfully.",
+            "offset": 32918,
+            "encoding": "unicode"
+          },
+          {
+            "value": "Click Close to continue.",
+            "offset": 32966,
+            "encoding": "unicode"
+          },
+          {
+            "value": "WeatherMate4.exe",
+            "offset": 33016,
+            "encoding": "unicode"
+          },
+          {
+            "value": "WeatherMate Portable was successfully installed.",
+            "offset": 33057,
+            "encoding": "unicode"
+          }
+        ],
+        "imports": [],
+        "raw_hex": "6c00650020007b0030007d0020007b0031007d00006163006f006d0070006c00650074006500640020007300750063006300650073007300660075006c006c00"
+      },
+      {
+        "start_offset": 12928,
+        "end_offset": 13184,
+        "section": {
+          "name": ".text",
+          "raw_offset": 512,
+          "raw_size": 219648,
+          "entropy": 5.1355
+        },
+        "strings": [],
+        "imports": [],
+        "raw_hex": "05000000070000000400000002000000020000000000ab0d0100000000000a00700c52170600dc0c52170600490d52170600fd0bed1613003e19000006003e0c"
+      }
+    ]
+  },
+  "file_path": "/wv/mohelkg1/Project/Malwhere/Static-Analysis-Engine/test_samples/softonic11.exe",
+  "predicted_class": "benign",
+  "confidence": 0.9999617338180542,
+  "num_bytes": 392704,
+  "num_windows": 1534,
+  "window_size": 256,
+  "top_regions": [
+    {
+      "start_offset": 41856,
+      "end_offset": 42112,
+      "score": 1.0,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 14400,
+      "end_offset": 14656,
+      "score": 0.956771,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 220288,
+      "end_offset": 220544,
+      "score": 0.598943,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 22208,
+      "end_offset": 22464,
+      "score": 0.407203,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 32896,
+      "end_offset": 33152,
+      "score": 0.272878,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 12928,
+      "end_offset": 13184,
+      "score": 0.277424,
+      "direction": "benign"
+    }
+  ],
+  "top_regions_bidirectional": [
+    {
+      "start_offset": 41856,
+      "end_offset": 42112,
+      "score": 1.0,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 14400,
+      "end_offset": 14656,
+      "score": 0.956771,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 220288,
+      "end_offset": 220544,
+      "score": 0.598943,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 22208,
+      "end_offset": 22464,
+      "score": 0.407203,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 233344,
+      "end_offset": 233600,
+      "score": 0.342235,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 391104,
+      "end_offset": 391360,
+      "score": 0.305613,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 0,
+      "end_offset": 256,
+      "score": 0.302797,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 12800,
+      "end_offset": 13056,
+      "score": 0.277424,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 32896,
+      "end_offset": 33152,
+      "score": 0.272878,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 12928,
+      "end_offset": 13184,
+      "score": 0.277424,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 364416,
+      "end_offset": 364672,
+      "score": 0.249227,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 47424,
+      "end_offset": 47680,
+      "score": 0.245223,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 173120,
+      "end_offset": 173376,
+      "score": 0.227254,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 26112,
+      "end_offset": 26368,
+      "score": 0.2094,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 117440,
+      "end_offset": 117696,
+      "score": 0.20675,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 254592,
+      "end_offset": 254848,
+      "score": 0.206293,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 29760,
+      "end_offset": 30016,
+      "score": 0.194223,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 33088,
+      "end_offset": 33344,
+      "score": 0.158913,
+      "direction": "malicious"
+    },
+    {
+      "start_offset": 189696,
+      "end_offset": 189952,
+      "score": 0.131483,
+      "direction": "benign"
+    },
+    {
+      "start_offset": 375488,
+      "end_offset": 375744,
+      "score": 0.130087,
+      "direction": "malicious"
+    }
+  ],
+  "analysis_time_seconds": 0.264,
+  "file_name": "softonic11.exe"
+}
