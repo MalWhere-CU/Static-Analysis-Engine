@@ -1,0 +1,41 @@
+{
+    "file": "/home/abdallah/malware-unpacking-and-yara-detection-sys/data/samples/test.exe",
+    "packed": false,
+    "unpacked": false,
+    "matched": true,
+    "match_source": "rules",
+    "yara_matches": [
+        "SUSP_Just_EICAR"
+    ],
+    "malconv_result": null,
+    "xai_result": null,
+    "generated_rule": null,
+    "status": "malicious",
+    "error": null,
+    "scan_info": {
+        "timestamp": "2026-06-15T02:58:01.750690",
+        "file_name": "test.exe",
+        "hashes": {
+            "md5": "44d88612fea8a8f36de82e1278abb02f",
+            "sha256": "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f"
+        }
+    },
+    "detections": [
+        {
+            "rule_name": "SUSP_Just_EICAR",
+            "description": "Just an EICAR test file - this is boring but users asked for it",
+            "author": "Florian Roth (Nextron Systems)",
+            "date": "2019-03-24",
+            "threat_level": "Not specified",
+            "score": 40,
+            "mitre_attck": "N/A",
+            "reference": "http://2016.eicar.org/85-0-Download.html",
+            "tags": []
+        }
+    ],
+    "summary": {
+        "total_matches": 1
+    },
+    "yara_ai_explainer": "Summary: The matched YARA rule indicates that the file is an EICAR test file. This file is intentionally created to be detected by antivirus software for testing purposes and contains no actual malicious payload or functionality. Threat: Test File (Severity: low) Capabilities: Simulates malware detection for testing purposes, No malicious capabilities. Recommended Actions: Confirm the file's hash (275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f) matches the official EICAR test file. No further action is required if confirmed to be the legitimate EICAR test file. Verify that your antivirus software is correctly detecting and handling this test file.",
+    "scan_time": 0.13
+}

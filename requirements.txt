@@ -5,6 +5,8 @@ unipacker
 requests
 openai
 python-dotenv
+psycopg2-binary
+sqlalchemy
 redis
 torch>=1.7.0
 torchvision

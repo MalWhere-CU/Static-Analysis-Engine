@@ -1,0 +1,293 @@
+{
+    "file": "/home/abdallah/malware-unpacking-and-yara-detection-sys/data/samples/mal_1.exe",
+    "packed": false,
+    "unpacked": false,
+    "matched": true,
+    "match_source": "malconv",
+    "yara_matches": [],
+    "malconv_result": {
+        "prediction": "malicious",
+        "confidence": 0.9990882873535156
+    },
+    "xai_result": {
+        "file": "/home/abdallah/malware-unpacking-and-yara-detection-sys/data/samples/mal_1.exe",
+        "file_size": 729600,
+        "method": "deeplift",
+        "pe_mapping": {
+            "file_info": {
+                "file": "/home/abdallah/malware-unpacking-and-yara-detection-sys/data/samples/mal_1.exe",
+                "file_size": 729600,
+                "is_pe": true,
+                "sections": [
+                    {
+                        "name": ".text",
+                        "raw_offset": 1024,
+                        "raw_size": 87040,
+                        "virtual_address": 4096,
+                        "virtual_size": 87037,
+                        "entropy": 6.4361
+                    },
+                    {
+                        "name": ".rdata",
+                        "raw_offset": 88064,
+                        "raw_size": 63488,
+                        "virtual_address": 94208,
+                        "virtual_size": 63268,
+                        "entropy": 5.1718
+                    },
+                    {
+                        "name": ".data",
+                        "raw_offset": 151552,
+                        "raw_size": 3072,
+                        "virtual_address": 159744,
+                        "virtual_size": 7328,
+                        "entropy": 2.3147
+                    },
+                    {
+                        "name": ".rsrc",
+                        "raw_offset": 154624,
+                        "raw_size": 4608,
+                        "virtual_address": 167936,
+                        "virtual_size": 4432,
+                        "entropy": 4.4863
+                    },
+                    {
+                        "name": ".reloc",
+                        "raw_offset": 159232,
+                        "raw_size": 570368,
+                        "virtual_address": 176128,
+                        "virtual_size": 570368,
+                        "entropy": 4.0408
+                    }
+                ],
+                "num_imports": 83,
+                "num_strings": 2080,
+                "entry_point": 38208,
+                "image_base": 5368709120
+            },
+            "region_mappings": [
+                {
+                    "start_offset": 486976,
+                    "end_offset": 487232,
+                    "section": {
+                        "name": ".reloc",
+                        "raw_offset": 159232,
+                        "raw_size": 570368,
+                        "entropy": 4.0408
+                    },
+                    "strings": [
+                        {
+                            "value": "708a2c19247e0449580d8ec4c9c0b64ab97b44bac5b307ce232cacfccd501a4f12a9097d4f6a6f33bb1dfd7c7bc1512227ac248aea01f39c07027c510b648e40dc52f3b0dd5d8a22aafc352319d45d2f4131db06d0f0b6967b690e36be30a5c02b7ab63c",
+                            "offset": 161280,
+                            "encoding": "ascii"
+                        }
+                    ],
+                    "imports": [],
+                    "raw_hex": "36643737633665376539323833326332353034333262636439333966323766323730343730396131656437663732383466313862643232363565353231656335"
+                },
+                {
+                    "start_offset": 95488,
+                    "end_offset": 95744,
+                    "section": {
+                        "name": ".rdata",
+                        "raw_offset": 88064,
+                        "raw_size": 63488,
+                        "entropy": 5.1718
+                    },
+                    "strings": [],
+                    "imports": [],
+                    "raw_hex": "000102030405080908090a0b0c0d0e0f020304050809060708090a0b0c0d0e0f000104050809060708090a0b0c0d0e0f040508090405060708090a0b0c0d0e0f"
+                },
+                {
+                    "start_offset": 54016,
+                    "end_offset": 54272,
+                    "section": {
+                        "name": ".text",
+                        "raw_offset": 1024,
+                        "raw_size": 87040,
+                        "entropy": 6.4361
+                    },
+                    "strings": [],
+                    "imports": [],
+                    "raw_hex": "a601004533c0488d0c9b488d0ccabaa00f0000e828fcffff85c07411ff0586a80100ffc383fb0f72d3b001eb0933c9e80800000032c04883c4205bc340534883"
+                },
+                {
+                    "start_offset": 104576,
+                    "end_offset": 104832,
+                    "section": {
+                        "name": ".rdata",
+                        "raw_offset": 88064,
+                        "raw_size": 63488,
+                        "entropy": 5.1718
+                    },
+                    "strings": [],
+                    "imports": [],
+                    "raw_hex": "070000000c000000080000000c000000090000000c0000000a000000070000000b000000080000000c000000160000000d000000160000000f00000002000000"
+                }
+            ]
+        },
+        "file_path": "/home/abdallah/malware-unpacking-and-yara-detection-sys/data/samples/mal_1.exe",
+        "predicted_class": "malicious",
+        "confidence": 0.9990882873535156,
+        "num_bytes": 729600,
+        "num_windows": 2850,
+        "window_size": 256,
+        "top_regions": [
+            {
+                "start_offset": 486976,
+                "end_offset": 487232,
+                "score": 1.0,
+                "direction": "malicious"
+            },
+            {
+                "start_offset": 95488,
+                "end_offset": 95744,
+                "score": 0.306943,
+                "direction": "malicious"
+            },
+            {
+                "start_offset": 54016,
+                "end_offset": 54272,
+                "score": 0.253807,
+                "direction": "malicious"
+            },
+            {
+                "start_offset": 104576,
+                "end_offset": 104832,
+                "score": 0.192761,
+                "direction": "malicious"
+            }
+        ],
+        "top_regions_bidirectional": [
+            {
+                "start_offset": 486976,
+                "end_offset": 487232,
+                "score": 1.0,
+                "direction": "malicious"
+            },
+            {
+                "start_offset": 95488,
+                "end_offset": 95744,
+                "score": 0.306943,
+                "direction": "malicious"
+            },
+            {
+                "start_offset": 216640,
+                "end_offset": 216896,
+                "score": 0.264342,
+                "direction": "benign"
+            },
+            {
+                "start_offset": 54016,
+                "end_offset": 54272,
+                "score": 0.253807,
+                "direction": "malicious"
+            },
+            {
+                "start_offset": 156416,
+                "end_offset": 156672,
+                "score": 0.251659,
+                "direction": "benign"
+            },
+            {
+                "start_offset": 104576,
+                "end_offset": 104832,
+                "score": 0.192761,
+                "direction": "malicious"
+            },
+            {
+                "start_offset": 320,
+                "end_offset": 576,
+                "score": 0.165843,
+                "direction": "benign"
+            },
+            {
+                "start_offset": 156032,
+                "end_offset": 156288,
+                "score": 0.148135,
+                "direction": "benign"
+            },
+            {
+                "start_offset": 138048,
+                "end_offset": 138304,
+                "score": 0.140514,
+                "direction": "benign"
+            },
+            {
+                "start_offset": 24256,
+                "end_offset": 24512,
+                "score": 0.13729,
+                "direction": "benign"
+            },
+            {
+                "start_offset": 173504,
+                "end_offset": 173760,
+                "score": 0.135602,
+                "direction": "malicious"
+            },
+            {
+                "start_offset": 158976,
+                "end_offset": 159232,
+                "score": 0.13369,
+                "direction": "malicious"
+            },
+            {
+                "start_offset": 408768,
+                "end_offset": 409024,
+                "score": 0.127049,
+                "direction": "benign"
+            },
+            {
+                "start_offset": 321792,
+                "end_offset": 322048,
+                "score": 0.125519,
+                "direction": "benign"
+            },
+            {
+                "start_offset": 103488,
+                "end_offset": 103744,
+                "score": 0.124848,
+                "direction": "malicious"
+            },
+            {
+                "start_offset": 60480,
+                "end_offset": 60736,
+                "score": 0.111022,
+                "direction": "malicious"
+            },
+            {
+                "start_offset": 164608,
+                "end_offset": 164864,
+                "score": 0.107507,
+                "direction": "malicious"
+            },
+            {
+                "start_offset": 68928,
+                "end_offset": 69184,
+                "score": 0.105365,
+                "direction": "benign"
+            },
+            {
+                "start_offset": 63168,
+                "end_offset": 63424,
+                "score": 0.099206,
+                "direction": "benign"
+            }
+        ],
+        "llm_explanation": {
+            "summary": "The model confidently identified this file as malicious, primarily due to significant attribution in the .reloc section, which contains a suspicious, long hexadecimal string. Additional malicious indicators were found in the .rdata and .text sections, suggesting obfuscated or packed content.",
+            "key_indicators": [
+                "High attribution score in the .reloc section (offset 0x076E40), which is unusually large (570,368 bytes).",
+                "Presence of a long, suspicious hexadecimal string ('708a2c19247e0449580d8ec4c9c0b64ab97b44bac5b307ce232cacfccd501a4f12a9097d4f6a6f33') within the attributed .reloc region.",
+                "Attribution in the .text section (offset 0x00D300) with relatively high entropy (6.44), often indicative of packed or encrypted code.",
+                "Attribution in the .rdata section (offsets 0x017500, 0x019880) with moderate entropy (5.17), which could suggest obfuscated data."
+            ],
+            "risk_assessment": "This file likely represents packed or obfuscated malware. The unusually large and highly attributed .reloc section, combined with the suspicious string and elevated entropy in code/data sections, are strong indicators of evasion techniques used by malicious software.",
+            "confidence_note": "The explanation is highly confident, given the model's very high prediction confidence (0.9991) and the clear mapping of top attribution regions to specific PE structures and suspicious content."
+        }
+    },
+    "generated_rule": "MAL_mal_1_2a045bbc_deeplift",
+    "status": "malicious",
+    "error": null,
+    "scan_time": 6.067
+}
