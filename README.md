@@ -1,6 +1,6 @@
 <h1>Design V1.0</h1>
 
-<img src="design-v1.0.jpg" alt="design" width="800"/>
+<img src="design.jpg" alt="design" width="800"/>
 
 <hr>
 <h2>YARA Rules</h2>
