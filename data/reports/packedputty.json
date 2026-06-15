@@ -1,0 +1,17 @@
+{
+    "file": "/home/abdallah/malware-unpacking-and-yara-detection-sys/data/samples/packedputty.exe",
+    "packed": true,
+    "unpacked": true,
+    "matched": false,
+    "match_source": null,
+    "yara_matches": [],
+    "malconv_result": {
+        "prediction": "benign",
+        "confidence": 0.9967304468154907
+    },
+    "xai_result": null,
+    "generated_rule": null,
+    "status": "benign",
+    "error": null,
+    "scan_time": 0.56
+}

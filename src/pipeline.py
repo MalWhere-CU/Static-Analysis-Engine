@@ -65,13 +65,14 @@ class StaticPipeline:
         }
 
         unpacked_path = None
+        temp_folder = None
 
         try:
             packer_info = detect_packer(self.file_path)
 
             if packer_info.get("die_match") or packer_info.get("section_match") or packer_info.get("high_entropy"):
                 result["packed"] = True
-                unpacked_path = UnpackFile.unpack(self.file_path)
+                unpacked_path, temp_folder = UnpackFile.unpack(self.file_path)
                 if unpacked_path and os.path.exists(unpacked_path):
                     result["unpacked"] = True
 
@@ -119,7 +120,7 @@ class StaticPipeline:
             result["error"] = str(e)
 
         result["scan_time"] = round(time.time() - start_time, 3)
-        if unpacked_path:
-            UnpackFile.cleanup(unpacked_path)
+        if temp_folder:
+            UnpackFile.cleanup(temp_folder)
 
         return result

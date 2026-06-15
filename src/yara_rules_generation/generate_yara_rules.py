@@ -46,9 +46,13 @@ HEX_PREFERRED_SECTIONS = {".text", ".reloc", "OVERLAY", ".data", "SECTION_GAP"}
 
 # ─── Directories ──────────────────────────────────────────────────────────────
 
-XAI_RESULTS_DIR = "/home/abdallah/malware-unpacking-and-yara-detection-sys/data/xai_results"
-GENERATED_RULES_DIR = "/home/abdallah/malware-unpacking-and-yara-detection-sys/yara/generated_rules"
+CURRENT_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = CURRENT_DIR.parent.parent
+XAI_RESULTS_DIR = PROJECT_ROOT / "data" / "xai_results"
+GENERATED_RULES_DIR = PROJECT_ROOT / "yara" / "generated_rules"
 
+XAI_RESULTS_DIR.mkdir(parents=True, exist_ok=True)
+GENERATED_RULES_DIR.mkdir(parents=True, exist_ok=True)
 
 # ─── String Filtering ─────────────────────────────────────────────────────────
 

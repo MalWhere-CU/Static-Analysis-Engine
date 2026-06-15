@@ -4,7 +4,9 @@ from pathlib import Path
 from pipeline import StaticPipeline
 
 
-REPORTS_DIR = Path("/home/abdallah/malware-unpacking-and-yara-detection-sys/data/reports")
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+REPORTS_DIR = PROJECT_ROOT / "data" / "reports"
+REPORTS_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def main():
